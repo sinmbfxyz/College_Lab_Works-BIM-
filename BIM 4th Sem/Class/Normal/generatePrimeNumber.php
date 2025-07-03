@@ -3,6 +3,8 @@
 <?php
 class Number
 {
+
+    function __construct(){}
     function generatePrime($n)
     {
         for ($i = 1; $i <= $n; $i++) {
