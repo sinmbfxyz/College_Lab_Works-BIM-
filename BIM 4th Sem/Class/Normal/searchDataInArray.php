@@ -5,7 +5,7 @@ class Number
 {
     public $arr;
 
-    function setArray($arr){
+    function __construct($arr){
         $this->arr=$arr;
     }
 
@@ -25,8 +25,7 @@ class Number
     }
 }
 
-$n = new Number();
-$n->setArray([1,2,3,4,5]);
+$n = new Number([1,2,3,4,5]);
 $n->searchElement(5);
 
 ?>
