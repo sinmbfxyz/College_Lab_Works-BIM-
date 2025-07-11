@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    background-color: #FFFFFF;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9em;
+}
+
+.nav ul .links {
+    display: flex;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav ul li {
+    padding: .5rem;
+}
+
+.nav ul li a {
+    text-decoration: none;
+}
+
+.nav ul .login-btn {
+    padding: .5rem;
+    border-radius: .5rem;
+    width: 5.5rem;
+    background: cornflowerblue;
+    color: white;
+    cursor: pointer;
+    border:1px solid ;
+}
+
+
+
