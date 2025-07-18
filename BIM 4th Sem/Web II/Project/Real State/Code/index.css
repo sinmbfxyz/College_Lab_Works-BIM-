@@ -1,41 +1,18 @@
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} */
-/* 
-.head {
-    background-color: #FFFFFF;
+.hero-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url('../Resources/hero4.webp');
+    background-size:cover;
+    background-position:center;
+     filter: brightness(0.5) blur(1px);
+    z-index:0;
 }
 
-.nav ul {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.9em;
+hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 1;
 }
-
-.nav ul .links {
-    display: flex;
-}
-
-.nav ul {
-    list-style: none;
-}
-
-.nav ul li {
-    padding: .5rem;
-}
-
-.nav ul li a {
-    text-decoration: none;
-}
-
-.nav ul .login-btn {
-    padding: .5rem;
-    border-radius: .5rem;
-    width: 5.5rem;
-    background: cornflowerblue;
-    color: white;
-    cursor: pointer;
-    border:1px solid ;
-} */
