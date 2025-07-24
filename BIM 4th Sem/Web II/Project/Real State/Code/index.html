@@ -8,76 +8,169 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="./index.css">
+    <style>
+        .signup,
+        .seeProperty {
+            transition-duration: .5s;
+            border: 2px solid black;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 w-[80%]">
-            <div class="flex items-center justify-between h-16">
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <!-- Main navigation links -->
+        <nav class="px-4 py-4">
+            <div class="max-w-7xl w-[90%] mx-auto flex items-center justify-between">
                 <!-- Logo -->
-                <div class="flex items-center">
-                    <h1 class="text-2xl font-bold">RealState</h1>
+                <div class="text-2xl text-shadow-black">
+                    <a href="#">DreamHomes</a>
                 </div>
 
-                <!-- Desktop navigation -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-gray-950 transition-colors">
-                        Home
-                    </a>
-                    <a href="#property" class="text-gray-700 hover:text-gray-950 transition-colors">
-                        Properties
-                    </a>
-                    <a href="#about" class="text-gray-700 hover:text-gray-950 transition-colors">
-                        About
-                    </a>
-                    <a href="#contact" class="text-gray-700 hover:text-gray-950 transition-colors">
-                        Contact
-                    </a>
-                </nav>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="#" class="text-gray-500 hover:text-black transition:colors">Home</a>
+                    <a href="listings.html" class="text-gray-500 hover:text-black transition:colors">Listings</a>
+                    <a href="services.html" class="text-gray-500 hover:text-black transition:colors">Services</a>
+                    <a href="about.html" class="text-gray-500 hover:text-black transition:colors">About</a>
+                    <a href="contact.html" class="text-gray-500 hover:text-black transition:colors">Contact</a>
+                </div>
 
-                <!-- Contact information -->
-                <div class="hidden lg:flex items-center space-x-4">
-                    <div class="flex items-center space-x-2 text-sm text-gray-500">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>(977) 9865135873</span>
-                    </div>
-                    <div class="flex items-center space-x-2 text-sm text-gray-500">
-
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>info@realstate.com</span>
-                    </div>
-
-                    <div class="flex items-center space-x-2 text-sm text-gray-500">
-
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>info@realstate.com</span>
-                    </div>
-                    <div class="flex items-center space-x-2 text-sm text-gray-500">
-                        <button class="hover:bg-purple-500 transition-all bg-purple-800 p-2 w-[4rem] cursor-pointer rounded-[.5rem] text-white">Login</button>
-                    </div>
+                <!-- Call to action -->
+                <div class="hidden md:block">
+                    <button class="text-gray-500 hover:text-black transition:colors cursor-pointer mr-2"><a
+                            href="signin.html">Sign
+                            In</a></button>
+                    <button
+                        class="signup border-2 py-1.5 px-7 rounded-3xl hover:text-white hover:bg-black  transition-colors delay-100 cursor-pointer"><a
+                            href="signup.html">Sign
+                            Up</a></button></button>
                 </div>
             </div>
-        </div>
-
+        </nav>
     </header>
 
     <main>
-        <section class="hero-section relative text-white py-20">
-            <div class="relative container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Find Your Dream Home</h1>
-                    <p class="text-xl md:text-2xl mb-8 text-blue-100">
-                        Discover the perfect property from our extensive collection of homes, apartments, and condos
-                    </p>
 
-                    <!-- Search form -->
-                    <div class="bg-white rounded-lg p-6 shadow-xl ">
+        <!-- Hero Section -->
+        <section class="relative h-screen flex justify-center bg-gradient-to-r from-slate-900 to-slate-700">
+            <!-- For background image overlay -->
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                style="background-image: url('../Resources/hero4.webp');">
+            </div>
 
+            <!-- Content -->
+            <div class="relative z-10 text-center max-w-7xl px-4 my-20">
+                <h1 class="text-white md:text-6xl mb-10 max-w-4xl mx-auto" style="font-size:4.2rem;">Unlock The Door To
+                    Your Perfect
+                    Home
+                    </h2>
+                    <p class="text-gray-200 text-[1.3rem] mb-20">Discover the perfect property that matches your
+                        lifestyle and
+                        budget</p>
+
+                    <!-- Search Bar -->
+                    <div
+                        class="bg-white rounded-[1rem] md:rounded-[5rem] max-w-[60rem] p-[2rem] md:px-[5rem] md:py-[1.5rem] shadow-xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-left items-center">
+                            <div class="space-y-2">
+                                <label for="location" class="">Locations</label>
+                                <select class="w-full border border-gray-200 h-10 text-gray-600 cursor-pointer">
+                                    <option disabled selected hidden>Select your city</option>
+                                    <option value="any">Any</option>
+                                    <option value="kathmandu">Kathmandu</option>
+                                    <option value="lalitput">Lalitpur</option>
+                                    <option value="bhaktapur">Bhaktapur</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="location" class="">Property Type</label>
+                                <select class="w-full border border-gray-200 h-10 text-gray-600 cursor-pointer">
+                                    <option value="" disabled selected hidden>Select property type</option>
+                                    <option value="any">Any Type</option>
+                                    <option value="house">House</option>
+                                    <option value="apartment">Apartment</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="location" class="">Price Range</label>
+                                <select class="w-full border border-gray-200 h-10 text-gray-600 cursor-pointer">
+                                    <option value="" disabled selected hidden>Select price range</option>
+                                    <option>Any Price</option>
+                                    <option>Under $200k</option>
+                                    <option>$200k - $500k</option>
+                                    <option>$500k - $1M</option>
+                                    <option>Over $1M</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2 text-center">
+                                <button
+                                    class="border-2 py-[.6rem] px-[4rem] rounded-3xl text-gray-200 bg-black transition-colors delay-100 cursor-pointer hover:text-gray-50"
+                                    style="font-size:1.1rem;">Search</button>
+                            </div>
+
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <!-- House Listings -->
+        <section class="px-20 py-10 w-full">
+            <div class="max-w-[120rem] w-[100%] mx-auto">
+                <div class="flex flex-col md:flex-row items-start justify-between mb-6">
+                    <div class="max-w-2xl mb-5">
+                        <h2 class="text-4xl mb-4">Discover Our Premium Property</h2>
+                        <p class="text-gray-500">Our expertise lies in matching you with homes that suit your lifestyle
+                            and
+                            aspirations. Discover a seamless real state experience</p>
+                    </div>
+                    <div class="space-y-2 text-center w-full md:w-[17rem]">
+                        <button
+                            class="seeProperty w-[16rem] border-2 p-[.5rem] pl-[2.5rem] pr-[2.5rem] md:py-[.6rem] md:px-[4rem] rounded-3xl hover:text-white hover:bg-black transition-colors delay-100 cursor-pointer"
+                            style="font-size:1rem;">See All Property</button>
                     </div>
                 </div>
 
-            </div>
+
+                <div class="h-50 max-w-[65rem] mx-auto grid grid-cols-2 md:grid-cols-3 gap-[3rem] mb-[10rem]">
+
+                    <div
+                        class="relative rounded-[.6rem] h-75 bg-gradient-to-b from-slate-500 to-slate-700 p-4 max-w-[19rem] shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="absolute rounded-[.6rem] h-full inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+                            style="background-image:url('../Resources/hero3.jpg');">
+                        </div>
+                        <div class="absolute z-10 text-white bottom-0 p-3">
+                            <h2 class="font-extrabold" style="font-size:1.5rem">House</h2>
+                            <p>Introducing the New Golden City to embrace of people</p>
+                        </div>
+
+                    </div>
+                    <div
+                        class="relative rounded-[.6rem] h-75 bg-gradient-to-b from-slate-500 to-slate-700 p-4 max-w-[19rem] shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="absolute rounded-[.6rem] h-full inset-0 bg-cover bg-center bg-no-repeat opacity-70"
+                            style="background-image:url('../Resources/hero4.webp');">
+                        </div>
+                        <div class="absolute z-10 text-white bottom-0 p-3">
+                            <h2 class="font-extrabold" style="font-size:1.5rem">Apartment</h2>
+                            <p>Introducing the New Golden City to embrace of people</p>
+                        </div>
+
+                    </div>
+                    <div
+                        class="relative rounded-[.6rem] h-75 bg-gradient-to-b from-slate-500 to-slate-700 p-4 max-w-[19rem] shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                        <div class="absolute rounded-[.6rem] h-full inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+                            style="background-image:url('../Resources/hero2.jpg');">
+                        </div>
+                        <div class="absolute z-10 text-white bottom-0 p-3">
+                            <h2 class="font-extrabold" style="font-size:1.5rem">Villa</h2>
+                            <p>Introducing the New Golden City to embrace of people</p>
+                        </div>
+
+                    </div>
+
+                </div>
         </section>
 
     </main>
