@@ -73,3 +73,42 @@ SELECT * FROM employee WHERE post!="Manager";
 
 13.
 UPDATE Salary SET allowance=0.15*basic_sal;
+
+14.
+UPDATE Salary as s
+INNER JOIN employee as e
+ON e.eid=s.eid
+SET s.d_allow=0.10 * s.basic_sal 
+where e.post in('Manager','Director');
+
+15.
+update Salary set gross_sal=basic_sal+allowance+d_allow;
+
+16.
+update Salary set tax=(7.5/100)*gross_sal where gross_sal>60000;
+
+17.
+update Salary set net_sal=gross_sal-tax;
+
+18.
+select e.eid,e.ename,e.post,s.basic_sal,s.allowance,s.d_allow,s.gross_sal,s.tax,s.net_sal
+from employee as e
+INner join Salary as s
+on e.eid=s.eid
+
+19.
+select e.eid,e.ename,e.post,s.net_sal
+from employee as e
+inner join Salary as s
+on e.eid=s.eid
+where e.post in('Director','Manager','Officer');
+
+20.
+SELECT e.ename,e.post,s.net_sal
+FROM employee AS e
+INNER JOIN Salary AS s
+ON e.eid=s.eid
+WHERE e.post IN('Director','Manager','Officer')
+order by e.department asc;
+
+
