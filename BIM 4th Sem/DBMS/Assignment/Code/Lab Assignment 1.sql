@@ -104,11 +104,10 @@ ON e.eid=s.eid
 WHERE e.post IN('Director','Manager','Officer');
 
 20.
-SELECT e.ename,e.post,s.net_sal
+SELECT e.ename,e.post,e.department,s.net_sal
 FROM employee AS e
 INNER JOIN Salary AS s
 ON e.eid=s.eid
-WHERE e.post IN('Director','Manager','Officer')
 ORDER BY e.department ASC;
 
 
