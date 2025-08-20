@@ -74,11 +74,24 @@ SELECT *FROM student WHERE sname LIKE '%t_';
 SELECT s.roll, s.sname, s.address, s.phone, s.email, c.course_name, c.faculty
 FROM student AS s
 INNER JOIN course AS c
-WHERE s.cid=c.cid
+ON s.cid=c.cid
 ORDER BY faculty ASC;
 
 /* 12. Perform left outer join, right outer join, full outer join on tables */
+SELECT s.roll,s.sname,s.address,s.phone,s.email,c.course_name,c.faculty
+FROM student AS s
+LEFT OUTER JOIN course AS c
+ON s.cid=c.cid;
 
+SELECT s.roll, s.sname, s.cid, c.course_name
+FROM student s
+RIGHT OUTER JOIN course AS c 
+ON s.cid = c.cid;
+
+SELECT s.roll, s.sname, s.cid, c.course_name
+FROM student s
+FULL OUTER JOIN course AS c 
+ON s.cid = c.cid;
 
 /* 13. Display the course details where no students are enrolled in */
 
