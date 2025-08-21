@@ -111,6 +111,25 @@ WHERE s.roll IS NULL;
 
 /* 14. Write SQL code to create view from employee details table. */
 
+CREATE TABLE employee_details (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(100),
+    department VARCHAR(50),
+    salary DECIMAL(10, 2),
+    hire_date DATE
+);
+
+CREATE VIEW view_employee_summary AS
+SELECT emp_name, department, salary
+FROM employee_details;
+
+SELECT * FROM view_employee_summary;
+DROP VIEW view_employee_summary;
+
+
+
+
+
 /* 15. List data from view. */
 
 /* 16. Create view from multiple table and display data. */
