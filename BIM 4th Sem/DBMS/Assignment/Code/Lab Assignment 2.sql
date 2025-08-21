@@ -19,6 +19,7 @@ FOREIGN KEY(cid) REFERENCES course(cid)
 );
 
 DROP TABLE student;
+TRUNCATE TABLE student;
 
 /* 4. */
 ALTER TABLE student ADD email VARCHAR(35);
@@ -78,14 +79,22 @@ ON s.cid=c.cid
 ORDER BY faculty ASC;
 
 /* 12. Perform left outer join, right outer join, full outer join on tables */
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+INSERT INTO student (roll, sname, address, phone, cid, email)
+VALUES (21, 'Uma', 'Chitwan', 9800000021, 'BTECH', 'uma.@example.com');
+
+SET FOREIGN_KEY_CHECKS = 1;
+
 SELECT s.roll,s.sname,s.address,s.phone,s.email,c.course_name,c.faculty
 FROM student AS s
 LEFT OUTER JOIN course AS c
 ON s.cid=c.cid;
 
 SELECT s.roll, s.sname, s.cid, c.course_name
-FROM student s
-RIGHT OUTER JOIN course AS c 
+FROM student AS s
+RIGHT OUTER JOIN course AS c
 ON s.cid = c.cid;
 
 SELECT s.roll, s.sname, s.cid, c.course_name
@@ -94,6 +103,17 @@ FULL OUTER JOIN course AS c
 ON s.cid = c.cid;
 
 /* 13. Display the course details where no students are enrolled in */
+SELECT c.*,s.*
+FROM student AS s
+RIGHT OUTER JOIN course AS c
+ON c.cid=s.cid
+WHERE s.roll IS NULL;
+
+/* 14. Write SQL code to create view from employee details table. */
+
+/* 15. List data from view. */
+
+/* 16. Create view from multiple table and display data. */
 
 
 
