@@ -55,22 +55,23 @@
                 <h2 class="text-3xl text-white">Create an account</h2>
                 <p class="text-gray-300 text-[1rem]">Already have an account? <a href="signin.html"
                         class="text-purple-400 underline">Login</a></p>
-                <form class="grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-4 md:gap-3 mt-[2.4rem] h-fit" action="http://localhost/BIM4th/Project/php/signup.php">
+                <form class="grid grid-cols-1 md:grid-cols-2 grid-rows-2 gap-4 md:gap-3 mt-[2.4rem] h-fit" action="http://localhost/College Works/BIM 4th Sem/Web II/Project/Real State/Code/php/signup.php" method="POST">
+                    <!--  -->
                     
                         <div class="space-y-2">
-                            <input type="text" placeholder="First name"
+                            <input type="text" placeholder="First name" name="fname" id="fname"
                                 class="border-2 border-gray-400 p-2 rounded-[.4rem] text-gray-400 w-full">
                         </div>
                         <div class="space-y-2">
-                            <input type="text" placeholder="Last name" class="border-2 p-2 rounded-[.4rem] border-gray-400
+                            <input type="text" placeholder="Last name" name="lname" id="lname" class="border-2 p-2 rounded-[.4rem] border-gray-400
                             text-gray-400 w-full">
                         </div>
                         <div class="space-y-2 md:col-span-2">
-                            <input type="text" placeholder="Email" class="w-full border-2 p-2 rounded-[.4rem] border-gray-400
+                            <input type="text" placeholder="Email" name="email" id="email" class="w-full border-2 p-2 rounded-[.4rem] border-gray-400
                             text-gray-400">
                         </div>
                         <div class="space-y-2 md:col-span-2">
-                            <input type="password" placeholder="Enter your password" class="w-full border-2 p-2 rounded-[.4rem] border-gray-400
+                            <input type="password" placeholder="Enter your password" name="password" id="password" class="w-full border-2 p-2 rounded-[.4rem] border-gray-400
                             text-gray-400">
                         </div>
                         <div class="space-y-2 md:col-span-2 flex items-center h-[2rem] gap-2">
